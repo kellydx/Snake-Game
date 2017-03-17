@@ -6,6 +6,21 @@ function Snake() {
   this.total = 0;
   this.body = [];
 
+
+
+  this.displayScore = function(){
+      canvas = document.getElementById('myCanvas');
+      var ctx = canvas.getContext('2d');
+      ctx.font = 'italic 30px Arial';
+      ctx.textAlign = 'center';
+      ctx. textBaseline = 'left';
+      ctx.fillStyle = 'black';
+      ctx.fillRect(10,10,200,50);
+      ctx.fillStyle = '#fff';
+      ctx.fillText("Score: " + this.total, 100, 50);
+
+  }
+
   this.eat = function(pos) {
     var distance = dist(this.x, this.y, pos.x, pos.y);
     if (distance < 1) {
@@ -34,7 +49,7 @@ function Snake() {
 
         this.total = 0;
         this.body = [];
-
+        this.displayScore();
       }
     }
   }

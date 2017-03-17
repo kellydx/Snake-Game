@@ -1,4 +1,4 @@
-mouse
+
 var snake;
 var grid = 20;
 var mouse;
@@ -6,6 +6,7 @@ var eat;
 var gameOver;
 var theme;
 var level =3;
+
 
 function preload() {
   eat = loadSound("eat.mp3");
@@ -20,6 +21,8 @@ function setup() {
   snake = new Snake();
   frameRate(level);
   mouseLocation();
+  snake.displayScore();
+
 }
 
 function mouseLocation() {
@@ -33,8 +36,10 @@ function draw() {
   background(51);
 
   if (snake.eat(mouse)) {
+    snake.displayScore();
     eat.play();
     level=level+3;
+
     frameRate(level);
     mouseLocation();
   }
@@ -57,5 +62,6 @@ function keyPressed() {
     snake.turn(1, 0);
   } else if (keyCode === LEFT_ARROW) {
     snake.turn(-1, 0);
-  }  
+  }
+
 }
