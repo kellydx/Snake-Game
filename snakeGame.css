@@ -11,3 +11,7 @@ body{
   left: 0;
   padding: 1rem;
 }
+
+.title { 
+  margin-left: 200px; 
+}
