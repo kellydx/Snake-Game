@@ -5,9 +5,7 @@ function Snake() {
   this.yspeed = 0;
   this.total = 0;
   this.body = [];
-
-
-
+  
   this.displayScore = function(){
       canvas = document.getElementById('myCanvas');
       var ctx = canvas.getContext('2d');
