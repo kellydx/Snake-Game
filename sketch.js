@@ -7,7 +7,6 @@ var gameOver;
 var theme;
 var level =3;
 
-
 function preload() {
   eat = loadSound("eat.mp3");
   gameOver = loadSound("die.mp3");
